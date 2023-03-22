@@ -13,6 +13,22 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('product_name');
+            $table->integer('product_price');
+            $table->text('product_short_description');
+            $table->text('product_long_description');
+            $table->string('product_image');
+            $table->string('product_id');
+            $table->integer('product_category_id');
+            $table->string('product_category_name');
+            $table->integer('product_sub_category_id');
+            $table->string('product_sub_category_name');
+            $table->string('product_brand_name');
+            $table->integer('product_brand_id');
+            $table->string('slug');
+            $table->string('product_size');
+            $table->string('status');
+            $table->integer('quantity');
             $table->timestamps();
         });
     }
