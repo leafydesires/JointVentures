@@ -21,14 +21,14 @@ return new class extends Migration
             $table->string('product_id');
             $table->integer('product_category_id');
             $table->string('product_category_name');
-            $table->integer('product_sub_category_id');
-            $table->string('product_sub_category_name');
+            $table->integer('product_subcategory_id');
+            $table->string('product_subcategory_name');
             $table->string('product_brand_name');
             $table->integer('product_brand_id');
             $table->string('slug');
             $table->string('product_size');
-            $table->string('status');
-            $table->integer('quantity');
+            $table->string('status')->default('active');
+            $table->integer('quantity')->default(0);
             $table->timestamps();
         });
     }

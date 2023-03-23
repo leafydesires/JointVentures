@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('brand_name');
             $table->string('slug');
             $table->string('status');
-            $table->integer('product_count');
+            $table->integer('product_count')->default(0);
             $table->timestamps();
         });
     }
