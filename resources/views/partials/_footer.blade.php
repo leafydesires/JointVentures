@@ -221,13 +221,13 @@
           <nav aria-label="Footer Navigation - Support">
             <ul class="flex flex-wrap gap-4 text-xs">
               <li>
-                <a href="#" class="text-gray-500 transition hover:opacity-75">
+                <a href="{{ route('terms.terms') }}" class="text-gray-500 transition hover:opacity-75">
                   Terms & Conditions
                 </a>
               </li>
 
               <li>
-                <a href="#" class="text-gray-500 transition hover:opacity-75">
+                <a href="{{ route('terms.privacy') }}" class="text-gray-500 transition hover:opacity-75">
                   Privacy Policy
                 </a>
               </li>

@@ -17,7 +17,7 @@ return [
             'payments' => 'c,r,u,d',
             'profile' => 'r,u'
         ],
-        'user' => [
+        'buyer' => [
             'profile' => 'r,u',
         ],
         'role_name' => [

@@ -9,6 +9,8 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\TermsController;
+use App\Http\Controllers\PrivacyController;
 
 
 /*
@@ -39,6 +41,11 @@ Route::get('/shopping/cart', 'App\Http\Controllers\CartController@cart')->name('
 //Checkout
 Route::get('/checkout/checkout', 'App\Http\Controllers\CheckoutController@checkout')->name('checkout.checkout');
 
+//Terms of service
+Route::get('/terms/terms', 'App\Http\Controllers\TermsController@terms')->name('terms.terms');
+
+//Privacy
+Route::get('/terms/privacy', 'App\Http\Controllers\PrivacyController@privacy')->name('terms.privacy');
 
 
 
@@ -63,8 +70,11 @@ Route::middleware('auth','role:administrator')->group(function () {
         Route::get('/admin/dashboard', 'Dashboard')->name('admin.dashboard');
         Route::get('/admin/messages', 'ContactMessages')->name('admin.messages');
         Route::get('/admin/create-category', 'CreateCategory')->name('admin.createcategory');
+        Route::get('/admin/edit-category/{id}', 'EditCategory')->name('admin.editcategory');
         Route::post('/admin/store-category', 'StoreCategory')->name('admin.storecategory');
+        Route::post('/admin/update-category', 'UpdateCategory')->name('admin.updatecategory');
         Route::get('/admin/all-category', 'AllCategory')->name('admin.allcategory');
+        Route::get('/admin/delete-category/{id}', 'DeleteCategory')->name('admin.deletecategory');
         Route::get('/admin/create-sub-category', 'CreateSubCategory')->name('admin.createsubcategory');
         Route::get('/admin/all-sub-category', 'AllSubCategory')->name('admin.allsubcategory');
         Route::get('/admin/create-brands', 'CreateBrands')->name('admin.createbrands');

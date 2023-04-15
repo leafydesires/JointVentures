@@ -46,7 +46,7 @@
                         </div>
                       </td>
                       <td>
-                        <img alt="image" src="assets/img/users/user-5.png" width="35">
+                        <img alt="image" src="{{ asset('/images/joint2.jpg') }}" width="35">
                       </td>
                       <td>
                         {{$category->slug}}
@@ -58,13 +58,35 @@
                         <div class="badge badge-danger badge-shadow">Unavailable</div>
                         @endif
                       </td>
-                      <td><a href="#" class="btn btn-primary">Detail</a></td>
+                      <td>
+                        {{-- Edit Button --}}
+                        <a href="{{route('admin.editcategory', $category->id)}}" class="btn btn-primary">Edit</a>
+                        {{-- Delete Button --}}
+                        <a href="{{route('admin.deletecategory', $category->id)}}" class="btn btn-danger">Delete</a>
+                    </td>
                     </tr>
-
                   </tbody>
                   @endforeach
 
                 </table>
+                <div class="card-footer text-right">
+                    <nav class="d-inline-block">
+                      <ul class="pagination mb-0">
+                        <li class="page-item disabled">
+                          <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1 <span
+                              class="sr-only">(current)</span></a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                          <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
               </div>
             </div>
           </div>
